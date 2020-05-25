@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Worker Science Lab!</title>
+  </head>
+  <body>
+    <h1>Go offline to see the Service Worker in action!</h1>
+    <p>
+      Check the "applications" tab of your devtools (in Chrome) to see the
+      Service Worker and simulate going offline.
+    </p>
+    <p>
+      Jason and Jem are okay engineers.
+    </p>
+    <button onclick="clicked()">Click Me</button>
+
+    <script>
+      function clicked() {
+        console.log('button clicked');
+      }
+
+      navigator.serviceWorker.register('/sw.js');
+
+      const worker = new Worker('/worker.js');
+    </script>
+  </body>
+</html>
